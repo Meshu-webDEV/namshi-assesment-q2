@@ -17,9 +17,9 @@ const Home = () => {
       {/* sidemenu */}
       <div className="col-start-1 col-span-2 shadow-sm rounded-sm bg-slate-100 min-h-screen w-full py-10">
         <div className="flex flex-col space-y-4 px-2 text-sm capitalize">
-          {categories.map((c) => (
-            <span key={c}>{c}</span>
-          ))}
+          {categories?.length
+            ? categories.map((c) => <span key={c}>{c}</span>)
+            : "loading..."}
         </div>
       </div>
       {/* products */}
