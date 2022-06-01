@@ -15,7 +15,13 @@ const Home = () => {
   return (
     <div className="grid grid-cols-12 gap-1 px-2">
       {/* sidemenu */}
-      <div className="col-start-1 col-span-2 shadow-sm rounded-sm bg-slate-100 min-h-screen w-full py-10"></div>
+      <div className="col-start-1 col-span-2 shadow-sm rounded-sm bg-slate-100 min-h-screen w-full py-10">
+        <div className="flex flex-col space-y-4 px-2 text-sm capitalize">
+          {categories?.length
+            ? categories.map((c) => <span key={c}>{c}</span>)
+            : "loading..."}
+        </div>
+      </div>
       {/* products */}
       <div className="col-start-3 col-end-10 shadow-sm rounded-sm min-h-screen w-full flex flex-col space-y-10 px-6 pt-5">
         {products?.length
