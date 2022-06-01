@@ -63,16 +63,18 @@ const Home = () => {
       {/* cart */}
       <div className="col-span-3  shadow-sm rounded-sm bg-slate-100 min-h-screen w-full pt-2">
         <div className="flex flex-col space-y-4 p-1">
-          {cart.map((item) => {
-            return (
-              <div
-                className="text-xs bg-violet-100 p-2 rounded-sm text-black font-medium"
-                key={item.id}
-              >
-                {item.title}
-              </div>
-            );
-          })}
+          {cart?.length
+            ? cart.map((item) => {
+                return (
+                  <div
+                    className="text-xs bg-violet-100 p-2 rounded-sm text-black font-medium"
+                    key={item.id}
+                  >
+                    {item.title}
+                  </div>
+                );
+              })
+            : "Empty"}
         </div>
       </div>
     </div>
